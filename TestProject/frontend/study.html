@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPro | Workspace</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="page page-workspace">
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <div class="dashboard-logo">Study<span>Pro</span></div>
+            <button class="nav-item active" type="button"><span class="nav-icon">⌂</span> Dashboard</button>
+            <button id="open-upload-button" class="nav-item" type="button"><span class="nav-icon">↑</span> Upload</button>
+            <button class="nav-item" type="button" data-agent-action="quiz"><span class="nav-icon">?</span> My Quizzes</button>
+            <button class="nav-item" type="button" data-agent-action="flashcards"><span class="nav-icon">☰</span> Flashcards</button>
+            <button class="nav-item" type="button" data-agent-action="notes"><span class="nav-icon">✎</span> Notes</button>
+            <div class="sidebar-spacer"></div>
+            <button id="logout-button" class="nav-item session-nav" type="button"><span class="nav-icon">◯</span> <span id="session-email">Loading...</span></button>
+            <p id="session-status" class="sidebar-status">Checking session</p>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="topbar">
+                <h1 class="page-title">Dashboard</h1>
+                <button id="topbar-upload-button" class="upload-btn" type="button">↑ Upload file</button>
+            </div>
+
+            <form id="upload-form" class="dashboard-upload-form">
+                <input id="study-file" name="file" type="file" accept=".txt,.pdf,.docx" required>
+            </form>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Files uploaded</div>
+                    <div id="stat-files" class="stat-value">0</div>
+                    <div id="stat-files-sub" class="stat-sub">No uploads yet</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Quizzes generated</div>
+                    <div id="stat-quizzes" class="stat-value">0</div>
+                    <div class="stat-sub">Based on your uploaded material</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Flashcards created</div>
+                    <div id="stat-flashcards" class="stat-value">0</div>
+                    <div id="stat-flashcards-sub" class="stat-sub">Lecture notes are available too</div>
+                </div>
+            </div>
+
+            <label class="upload-zone" for="study-file">
+                <div class="upload-zone-icon">⬆</div>
+                <div class="upload-zone-text">Drop your file here or <strong>browse</strong></div>
+                <div id="file-picker-title" class="upload-zone-sub">Supports PDF, DOCX, TXT</div>
+            </label>
+
+            <div class="section-title">Generate from your file</div>
+            <div class="actions">
+                <button type="button" class="action-card" data-agent-action="quiz">
+                    <div class="action-icon">?</div>
+                    <div class="action-title">Generate quiz</div>
+                    <div class="action-desc">Multiple choice questions from your material</div>
+                </button>
+                <button type="button" class="action-card" data-agent-action="flashcards">
+                    <div class="action-icon">☰</div>
+                    <div class="action-title">Flashcards</div>
+                    <div class="action-desc">Key terms and definitions to memorize</div>
+                </button>
+                <button type="button" class="action-card" data-agent-action="notes">
+                    <div class="action-icon">✎</div>
+                    <div class="action-title">Lecture notes</div>
+                    <div class="action-desc">Structured summary of the content</div>
+                </button>
+            </div>
+
+            <div class="section-title">Recent files</div>
+            <section class="recent">
+                <div class="recent-header">All files</div>
+                <div id="recent-files-list"></div>
+            </section>
+
+            <div class="section-title">Study AI output</div>
+            <section class="recent ai-output">
+                <div class="recent-header">Agent responses</div>
+                <div id="agent-thread" class="agent-thread dashboard-thread" aria-live="polite"></div>
+                <form id="agent-form" class="agent-form dashboard-agent-form">
+                    <div class="agent-composer">
+                        <input
+                            id="agent-input"
+                            type="text"
+                            placeholder="Try: summarize my file, quiz me, or make flashcards"
+                            autocomplete="off"
+                        >
+                        <button id="agent-send-button" type="submit" data-idle-label="Send">Send</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

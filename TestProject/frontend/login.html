@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPro | Login</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="page page-auth">
+    <main class="auth-dashboard">
+        <aside class="auth-sidebar">
+            <div class="dashboard-logo">Study<span>Pro</span></div>
+            <p class="auth-sidebar-eyebrow">Welcome back</p>
+            <h1 class="auth-sidebar-title">Return to your study dashboard and keep the workflow moving.</h1>
+            <p class="auth-sidebar-copy">
+                Sign in to reopen your workspace, upload fresh material, and continue generating notes, quizzes, and flashcards.
+            </p>
+
+            <div class="auth-sidebar-list">
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">⌂</span>
+                    <div>
+                        <strong>Dashboard first</strong>
+                        <p>Login drops you straight into the study workspace.</p>
+                    </div>
+                </div>
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">✎</span>
+                    <div>
+                        <strong>Protected AI routes</strong>
+                        <p>Your session token is used for upload and generation endpoints.</p>
+                    </div>
+                </div>
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">◯</span>
+                    <div>
+                        <strong>Single account flow</strong>
+                        <p>Minimal auth, then immediate access to the real backend features.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="auth-main">
+            <div class="auth-card-shell">
+                <p class="eyebrow">Sign in</p>
+                <h2>Login</h2>
+                <p class="subtitle">Use the account you already created.</p>
+
+                <form id="login-form" class="auth-form">
+                    <div class="field">
+                        <label for="login-email">Email</label>
+                        <input id="login-email" type="email" placeholder="name@example.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="login-password">Password</label>
+                        <input id="login-password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                    </div>
+
+                    <button type="submit" data-idle-label="Login">Login</button>
+                </form>
+
+                <p class="switch-text">
+                    Need an account? <a href="./index.html">Register</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

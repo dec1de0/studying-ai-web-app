@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPro | Success</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="page page-success">
+    <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+    <main class="success-dashboard">
+        <section class="success-card">
+            <div class="dashboard-logo success-logo">Study<span>Pro</span></div>
+            <p class="eyebrow">Success</p>
+            <h1 id="success-title">Login is successful</h1>
+            <p id="success-subtitle" class="subtitle">
+                The request completed successfully.
+            </p>
+
+            <div class="success-summary">
+                <div class="success-metric">
+                    <span class="success-metric-label">State</span>
+                    <span id="success-state" class="success-metric-value">Authenticated</span>
+                </div>
+                <div class="success-metric">
+                    <span class="success-metric-label">Account</span>
+                    <span id="success-email" class="success-metric-value">Ready</span>
+                </div>
+            </div>
+
+            <p id="success-note" class="success-note">
+                You can now continue with the next step.
+            </p>
+
+            <div class="success-actions">
+                <a id="success-primary-action" class="button-link" href="./login.html">Back to login</a>
+                <a id="success-secondary-action" class="button-link button-link-secondary" href="./index.html">Register another account</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>

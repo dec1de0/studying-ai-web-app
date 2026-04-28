@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPro | Register</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="page page-auth">
+    <main class="auth-dashboard">
+        <aside class="auth-sidebar">
+            <div class="dashboard-logo">Study<span> with AI</span></div>
+            <p class="auth-sidebar-eyebrow">Study AI workspace</p>
+            <h1 class="auth-sidebar-title">Create your account and build a cleaner study routine.</h1>
+            <p class="auth-sidebar-copy">
+                Register once, then upload material, generate quizzes, create flashcards, and turn messy notes into a structured workspace.
+            </p>
+
+            <div class="auth-sidebar-list">
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">↑</span>
+                    <div>
+                        <strong>Upload files</strong>
+                        <p>PDF, DOCX, and TXT inputs supported by the backend.</p>
+                    </div>
+                </div>
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">?</span>
+                    <div>
+                        <strong>Generate quizzes</strong>
+                        <p>Turn uploaded material into testable questions.</p>
+                    </div>
+                </div>
+                <div class="auth-sidebar-item">
+                    <span class="auth-sidebar-item-icon">☰</span>
+                    <div>
+                        <strong>Review faster</strong>
+                        <p>Flashcards and lecture notes live in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="auth-main">
+            <div class="auth-card-shell">
+                <p class="eyebrow">Create account</p>
+                <h2>Register</h2>
+                <p class="subtitle">Use your email and password to create a new account.</p>
+
+                <form id="register-form" class="auth-form">
+                    <div class="field">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" type="email" placeholder="name@example.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="register-password">Password</label>
+                        <input id="register-password" type="password" placeholder="Choose a password" autocomplete="new-password" required>
+                        <p class="field-hint">Keep it under 72 characters to match backend validation.</p>
+                    </div>
+
+                    <button type="submit" data-idle-label="Create account">Create account</button>
+                </form>
+
+                <p class="switch-text">
+                    Already registered? <a href="./login.html">Login</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
