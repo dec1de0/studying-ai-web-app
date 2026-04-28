@@ -70,13 +70,6 @@ async def me(current_user: User = Depends(get_current_user)):
     return current_user
 
 
-@router.delete("/clear_db")
-def clear_db(db: Session = Depends(get_db)):
-    db.query(User).delete()
-    db.commit()
-    return {"message": "Database cleared"}
-
-
 @router.post("/read/generate_quiz")
 def generate_quiz_endpoint(topic: str, num_questions: int = 5):
     try:
